@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 python-dotenv = "*"
+flaskr = {editable = true, path = "."}
 
 [dev-packages]
 autopep8 = "*"
