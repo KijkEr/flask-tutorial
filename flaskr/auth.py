@@ -31,7 +31,7 @@ def register():
                     "INSERT INTO user (username, password) VALUES (?, ?)",
                     (username, generate_password_hash(password)),
                 )
-                db.commit
+                db.commit()
             except db.IntegrityError:
                 error = F"User {username} is already registered."
             else:
@@ -80,7 +80,7 @@ def load_logged_in_user():
         ).fetchone()
 
 
-@bp.route('logout')
+@bp.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))

@@ -9,6 +9,7 @@ def test_index(client, auth):
 
     auth.login()
     response = client.get('/')
+    print(response.data)
     assert b'Log Out' in response.data
     assert b'test title' in response.data
     assert b'by test on 2018-01-01' in response.data
